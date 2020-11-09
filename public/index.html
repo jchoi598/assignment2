@@ -6,6 +6,51 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    Hello world.
+    <h1>INST377 - Assignment 2</h1>
+    <form>
+        <input type="text", class="search", placeholder="Filter by name or category">
+        <ul class="suggestions"> 
+        </ul>
+    </form>
+
+<script>
+    const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json'
+
+    const restaurants = [];
+    fetch(endpoint)
+        .then(blob => blob.json())
+        .then(data => restaurants.push(...data))
+    
+    function findMatches(wordToMatch, restaurants) {
+        return restaurants.filter(info => {
+            const regex = new RegExp(wordToMatch, 'gi')
+            return info.name.match(regex) || info.category.match(regex)
+        });
+    }
+
+    function displayMatches() {
+        const matchArray = findMatches(this.value, restaurants);
+        const html = matchArray.map(info => {
+            const regex = new RegExp(this.value, 'gi');
+            const restaurantName = info.name.replace(regex, `<span class="hl">${this.value}</span>`);
+            const categoryName = info.category.replace(regex, `<span class="hl">${this.value}</span>`);
+            return `
+                <li>
+                    <span class="name">${restaurantName}, ${categoryName}</span>
+                    <span class="population">${info.address_line_1}, ${info.city} ${info.state}, ${info.zip}</span>
+                </li>
+            `;
+        }).join('');
+        suggestions.innerHTML = html;
+    }
+
+    const searchInput = document.querySelector('.search');
+    const suggestions = document.querySelector('.suggestions');
+
+    searchInput.addEventListener('change', displayMatches);
+    searchInput.addEventListener('keyup', displayMatches);
+
+
+</script>
 </body>
 </html>
