@@ -1,0 +1,23 @@
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 12px;
+  
+  }
+  
+  body {
+    margin: 0;
+    background: #f8b257;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container {
+    min-height: 100%;
+  }
