@@ -2,7 +2,7 @@ html {
     box-sizing: border-box;
     background: #46c4ff;
     font-family: 'Nunito', sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 200;
     margin: 50;
   }
@@ -13,9 +13,8 @@ html {
   color: white;
   align-items: center;
   margin: -60;
-  padding: 5px;
   justify-content: space-around;
-  font-size: 30;
+  font-size: 25px;
 }
   
 *, *:before, *:after {
