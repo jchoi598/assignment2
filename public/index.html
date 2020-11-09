@@ -43,7 +43,7 @@
             return `
                 <li>
                     <span class="name">${restaurantName.toLowerCase()}, ${categoryName.toLowerCase()}</span>
-                    <span class="population">${info.address_line_1.toLowerCase()}, ${info.city.toLowerCase()} ${info.state}, ${info.zip}</span>
+                    <span class="population">${info.address_line_1}, ${info.city} ${info.state}, ${info.zip}</span>
                 </li>
             `;
         }).join('');
