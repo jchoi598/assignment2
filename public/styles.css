@@ -12,8 +12,7 @@ html {
   background-image: linear-gradient(rgb(27, 75, 206), #46c4ff);
   color: white;
   align-items: center;
-  margin: 0;
-
+  margin: -60;
   padding: 5px;
   justify-content: space-around;
   font-size: 30;
